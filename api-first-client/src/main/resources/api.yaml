@@ -1,0 +1,61 @@
+openapi: 3.0.1
+info:
+  title: Bank Application API
+  version: '1.0'
+paths:
+  /account:
+    summary: Banking Api
+    description: This API is related to accessing account resource
+    post:
+      summary: Create an account
+      description: This API provides a way to create an account
+      operationId: 'createAccount'
+      tags:
+        - account
+      requestBody:
+        # because there is a bug which doesn allow to use `$ref` in request body
+        # https://github.com/OpenAPITools/openapi-generator/issues/7922
+         content:
+           application/json:
+             schema:
+               type: object
+               properties:
+                 name:
+                   type: string
+                 accountType:
+                   type: string
+                 residencyStatus:
+                   type: string
+      responses:
+        '200':
+          description: Response on creating the account
+          $ref: '#/components/responses/accountCreationResponse'
+
+components:
+  responses:
+    accountCreationResponse:
+      description: Response on creating the account
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              accountType:
+                type: string
+              accountId:
+                type: string
+  requestBodies:
+    accountCreation:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              accountType:
+                type: string
+              residencyStatus:
+                type: string

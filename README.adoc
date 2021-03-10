@@ -1,0 +1,17 @@
+= Spring Boot: API First Approach
+
+This is a sample code on how you can work with API first approach.
+In this I use the API contract (based on Open API 3 standards) for creating client and server side code.
+
+The maven plugin that I have used here is the `Open API generator plugin` from https://openapi-generator.tech/docs/plugins[here]
+
+It has support for various languages and also various ways of creating your client or server code.
+
+There are various customization options available that you can use, which you can checkout  at the GitHub link https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator-maven-plugin[here]
+
+In this sample, I have used `spring` generator for server side generation and `java` for  client side code generation.
+
+== About the application
+Its a simple application , wherein you can trigger the client to server communication using another API.
+
+This is just to demostrate, how the client and server code is generated and how you use it in the application.
