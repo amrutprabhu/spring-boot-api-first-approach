@@ -1,8 +1,8 @@
 package com.amrut.prabhu;
 
 import com.amrut.prabhu.api.AccountApi;
-import com.amrut.prabhu.model.InlineObject;
-import com.amrut.prabhu.model.InlineResponse200;
+import com.amrut.prabhu.model.CreateAccount200Response;
+import com.amrut.prabhu.model.CreateAccountRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,13 +21,13 @@ public class Controller {
 
     @GetMapping("/call")
     public void callClient() {
-        InlineObject request = new InlineObject();
+        CreateAccountRequest request = new CreateAccountRequest();
         request.accountType("Savings")
                 .residencyStatus("Resident")
                 .name("Amrut Prabhu");
 
         log.info("Sending generated request: {}", request);
-        InlineResponse200 account = this.accountAPI.createAccount(request);
+        CreateAccount200Response account = this.accountAPI.createAccount(request);
         log.info("Received response: {}", account);
     }
 }
