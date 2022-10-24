@@ -17,7 +17,7 @@
 		<java.version>11</java.version>
 		<swagger-annotations-version>2.2.2</swagger-annotations-version>
 		<springfox-version>3.0.0</springfox-version>
-		<jackson-databind-nullable>0.2.3</jackson-databind-nullable>
+		<jackson-databind-nullable>0.2.4</jackson-databind-nullable>
 		<okhttp.version>4.10.0</okhttp.version>
 		<gson.version>2.9.0</gson.version>
 	</properties>
