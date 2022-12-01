@@ -10,7 +10,7 @@ on:
 
 jobs:
   verify-project-build:
-    permissions: write-all
+    permissions: read-all
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
