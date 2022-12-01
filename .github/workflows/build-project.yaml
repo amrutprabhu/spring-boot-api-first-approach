@@ -33,6 +33,7 @@ jobs:
 
       - name: Report ${{ matrix.projects }}
         uses: dorny/test-reporter@v1
+        working-directory: ${{ matrix.projects }}
         if: always()
         with:
           name: Maven Tests
