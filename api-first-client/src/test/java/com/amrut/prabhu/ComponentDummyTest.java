@@ -57,6 +57,6 @@ public class ComponentDummyTest {
     @Test
     void makeRequest() throws Exception {
         mockMvc.perform(get("/call"))
-                .andExpect(status().is2xxSuccessful());
+                .andExpect(status().isBadRequest());
     }
 }
