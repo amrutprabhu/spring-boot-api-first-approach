@@ -30,3 +30,12 @@ jobs:
       - name: Build the project
         working-directory: ${{ matrix.projects }}
         run: mvn clean verify
+
+      - name: Report
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Tests Results - ${{ matrix.projects }}
+          path: "**/surefire-reports/*.xml"
+          reporter: java-junit
+          fail-on-error: true
