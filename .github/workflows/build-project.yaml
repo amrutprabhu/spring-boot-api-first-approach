@@ -10,6 +10,9 @@ on:
 
 jobs:
   verify-project-build:
+    permissions: # should be removed by this MR: https://github.com/dorny/test-reporter/pull/174/
+      statuses: write
+      checks: write
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
