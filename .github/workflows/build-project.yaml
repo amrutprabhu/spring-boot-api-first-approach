@@ -31,7 +31,7 @@ jobs:
         working-directory: ${{ matrix.projects }}
         run: mvn clean verify
 
-      - name: Report ${{ matrix.projects }}
+      - name: Report  ${{ matrix.projects }}
         uses: dorny/test-reporter@v1
         working-directory: ${{ matrix.projects }}
         if: always()
