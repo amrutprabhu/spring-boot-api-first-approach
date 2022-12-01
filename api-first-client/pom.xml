@@ -14,7 +14,7 @@
 	<name>Open API 3 - API First Client</name>
 	<description>Open API 3 - API First Client</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 		<swagger-annotations-version>2.2.2</swagger-annotations-version>
 		<springfox-version>3.0.0</springfox-version>
 		<jackson-databind-nullable>0.2.4</jackson-databind-nullable>
@@ -62,6 +62,17 @@
 			<artifactId>jackson-databind-nullable</artifactId>
 			<version>${jackson-databind-nullable}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.tomakehurst</groupId>
+			<artifactId>wiremock-jre8</artifactId>
+			<version>2.32.0</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -69,7 +80,7 @@
 			<plugin>
 				<groupId>org.openapitools</groupId>
 				<artifactId>openapi-generator-maven-plugin</artifactId>
-				<version>6.1.0</version>
+				<version>6.2.1</version>
 				<executions>
 					<execution>
 						<phase>generate-sources</phase>

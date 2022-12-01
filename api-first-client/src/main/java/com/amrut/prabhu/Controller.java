@@ -15,8 +15,6 @@ public class Controller {
 
     public Controller(AccountApi accountApi) {
         this.accountAPI = accountApi;
-        this.accountAPI.getApiClient()
-                .setBasePath("http://localhost:8080");
     }
 
     @GetMapping("/call")
