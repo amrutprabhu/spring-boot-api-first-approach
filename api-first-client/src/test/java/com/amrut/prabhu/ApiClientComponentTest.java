@@ -4,11 +4,12 @@ import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
@@ -18,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class ComponentTest {
+public class ApiClientComponentTest {
 
     private static final WireMockServer WIRE_MOCK_SERVER;
     @Autowired
@@ -49,11 +50,10 @@ public class ComponentTest {
                         .withHeader("content-type", "application/json")));
     }
 
-    @BeforeEach
-    public void before() {
-        apiClient.setBasePath(WIRE_MOCK_SERVER.baseUrl());
+    @DynamicPropertySource
+    static void properties(DynamicPropertyRegistry registry) {
+        registry.add("accountApiUrl", () -> WIRE_MOCK_SERVER.baseUrl());
     }
-
     @Test
     void makeRequest() throws Exception {
         mockMvc.perform(get("/call"))

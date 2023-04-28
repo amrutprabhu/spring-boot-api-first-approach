@@ -1,2 +1,4 @@
 server:
   port: 8090
+
+accountApiUrl: http://localhost:8080
