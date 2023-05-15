@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>17</java.version>
-        <swagger-annotations-version>2.2.9</swagger-annotations-version>
+        <swagger-annotations-version>2.2.10</swagger-annotations-version>
         <springfox-version>3.0.0</springfox-version>
         <jackson-databind-nullable>0.2.6</jackson-databind-nullable>
     </properties>
